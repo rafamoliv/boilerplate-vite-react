@@ -1,0 +1,23 @@
+import styled, { css } from 'styled-components'
+
+import { ButtonStyle } from '@/components/atoms/'
+
+export const Wrap = styled.div`
+  ${({ theme }) => css`
+    border: solid 1px ${theme.colors.primary};
+    @media (min-width: ${theme.breakpoints.sm}) {
+      font-size: ${theme.font.sizes.xl};
+    }
+  `}
+`
+
+export const Button = styled(ButtonStyle.Button)``
+
+export const Text = styled.p`
+   ${({ theme }) => css`
+    border: solid 1px ${theme.colors.primary};
+    margin-bottom: ${theme.spacing[0]};
+    color: ${theme.colors.white};
+    margin-top: ${theme.spacing[0]};
+  `}
+`

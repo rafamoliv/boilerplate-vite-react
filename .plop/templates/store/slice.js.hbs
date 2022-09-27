@@ -1,0 +1,17 @@
+import { createSlice } from '@reduxjs/toolkit'
+
+export const slice = createSlice({
+  name: '{{camelCase name}}',
+  initialState: {
+    isInitialized: false
+  },
+  reducers: {
+    set{{properCase name}}(state, action) {
+      return { ...state, isInitialized: action.payload }
+    }
+  }
+})
+
+export const { set{{properCase name}} } = slice.actions
+export const select{{properCase name}} = (state) => state.isInitialized
+export default slice.reducer

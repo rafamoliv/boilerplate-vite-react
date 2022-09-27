@@ -1,0 +1,35 @@
+// #region imports
+import PropTypes from 'prop-types'
+
+import config from './{{pascalCase name}}.config'
+import * as S from './{{pascalCase name}}.styles'
+// #endregion imports
+
+/**
+ * Componente {{pascalCase name}}
+ */
+
+const {{pascalCase name}} = ({ children, onClick }) => {
+  const teste = config.foo
+  console.log(teste)
+
+  return (
+    <S.Wrap>
+      <S.Button onClick={onClick}>Botão</S.Button>
+      <S.Text>{children}</S.Text>
+    </S.Wrap>
+  )
+}
+
+{{pascalCase name}}.defaultProps = {
+  children: '{{pascalCase name}} Componente'
+}
+
+{{pascalCase name}}.propTypes = {
+  /** Conteúdo filho */
+  children: PropTypes.any,
+  /** Evento de clique */
+  onClick: PropTypes.func
+}
+
+export default {{pascalCase name}}

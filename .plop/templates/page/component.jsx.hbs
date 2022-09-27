@@ -1,0 +1,47 @@
+// #region imports
+import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { Button } from '@/components'
+import { setSignout, setInitialSetting } from '@/store'
+
+import config from './{{pascalCase name}}.config'
+import * as S from './{{pascalCase name}}.styles'
+
+import { reactLogo } from '@/assets/icons'
+// #endregion imports
+
+/**
+ *  Page {{pascalCase name}}
+ */
+
+const {{pascalCase name}} = ({ children }) => {
+  const dispatch = useDispatch()
+  const { isInitialized } = useSelector((state) => state.initialSetting)
+  const [count, setCount] = useState(0)
+
+  return (
+    <S.Container>
+      <S.Logo alt="React logo" src={reactLogo} />
+      <p>{config.foo}</p>
+
+      <S.Button onClick={() => setCount((count) => count + 1)} primary>
+        count is {count}
+      </S.Button>
+
+      <Button
+        onClick={() => {
+          alert(`Clicked! Change isInitialized to: ${!isInitialized}`)
+          dispatch(setInitialSetting(!isInitialized))
+        }}
+      >
+        Disparar redux
+      </Button>
+
+      <S.Button onClick={() => dispatch(setSignout())}>SIGN OUT</S.Button>
+    </S.Container>
+
+}
+
+
+export default {{pascalCase name}}

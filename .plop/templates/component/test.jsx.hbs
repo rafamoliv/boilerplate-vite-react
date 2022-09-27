@@ -1,0 +1,30 @@
+// #region imports
+import { render, screen, userEvent } from '@/utils/tests'
+
+import { {{pascalCase name}} } from './'
+// #endregion imports
+
+const props = {
+  children: 'Olá mundo'
+}
+
+describe('<{{pascalCase name}} />', () => {
+  describe('Component Render', () => {
+    it('render element', () => {
+      const { container } = render(<{{pascalCase name}} {...props} />)
+      const button = screen.getByRole('button', '/Botão/i')
+      expect(button).toBeInTheDocument()
+      expect(container.firstChild).toMatchSnapshot()
+    })
+  })
+
+  describe('Events', () => {
+    it('Click element', async () => {
+      render(<{{pascalCase name}} {...props} />)
+      const button = screen.getByRole('button', '/Botão/i')
+      await userEvent.click(button)
+
+      expect(props.onClick).toBeCalled()
+    })
+  })
+})

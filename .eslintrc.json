@@ -1,0 +1,119 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true,
+      "jest": true,
+      "node": true
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+          "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "react-hooks",
+        "import"
+    ],
+    "rules": {
+      "linebreak-style": ["warn", "unix"],
+      "no-unused-vars": "warn",
+      "react-hooks/exhaustive-deps": "warn",
+      "react-hooks/rules-of-hooks": "error",
+      "react/jsx-sort-default-props": "warn",
+      "react/jsx-sort-props": "warn",
+      "react/jsx-wrap-multilines": [
+        "warn",
+        {
+          "return": "parens-new-line"
+        }
+      ],
+      "react/react-in-jsx-scope": "off",
+      "react/sort-prop-types": "warn",
+      "import/first": "error",
+      "import/order": [
+        "error",
+        {
+          "newlines-between": "always",
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+            "object",
+            "type"
+          ],
+          "pathGroups": [
+            {
+              "pattern": "react",
+              "patternOptions": {
+                "partial": true,
+                "nocomment": true
+              },
+              "group": "external"
+            },
+            {
+              "pattern": "@/utils/**",
+              "patternOptions": {
+                "partial": true,
+                "nocomment": true
+              },
+              "group": "internal"
+            },
+            {
+              "pattern": "@/pages/**",
+              "patternOptions": {
+                "partial": true,
+                "nocomment": true
+              },
+              "group": "internal"
+            },
+            {
+              "pattern": "@/components/**",
+              "patternOptions": {
+                "partial": true,
+                "nocomment": true
+              },
+              "group": "internal"
+            },
+            {
+              "pattern": "@/styles/**",
+              "patternOptions": {
+                "partial": true,
+                "nocomment": true
+              },
+              "group": "internal"
+            },
+            {
+              "pattern": "@/store/**",
+              "patternOptions": {
+                "partial": true,
+                "nocomment": true
+              },
+              "group": "internal"
+            }
+          ],
+          "alphabetize": {
+            "order": "asc"
+          }
+        }
+      ]
+    }
+}

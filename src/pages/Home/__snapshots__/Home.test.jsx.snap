@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`should test 1`] = `
+@media (min-width:48rem) {
+
+}
+
+<h1>
+  Boilerplate Vite + React
+</h1>
+`;

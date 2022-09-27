@@ -1,0 +1,32 @@
+// Vitest Snapshot v1
+
+exports[`<Collapse /> > Component Render > render element 1`] = `
+.c1 {
+  background: #f231a5;
+  padding: 0.5rem 1rem;
+  margin: 1em;
+  border: 2px solid #b81979;
+  border-radius: 3px;
+  color: #fff;
+}
+
+.c0 {
+  border: solid 1px #f231a5;
+}
+
+@media (min-width:48rem) {
+  .c0 {
+    font-size: 1.5rem;
+  }
+}
+
+<div
+  class="c0"
+>
+  <button
+    class="c1"
+  >
+    Mostrar
+  </button>
+</div>
+`;
