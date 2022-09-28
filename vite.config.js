@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => {
         }
       })
     ],
+    envPrefix: 'REACT_',
     resolve: {
       alias: {
         '@': pathResolve('./src')

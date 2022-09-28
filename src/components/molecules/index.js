@@ -1,1 +1,1 @@
-export { Collapse } from './Collapse'
+export * from './Collapse'

@@ -1,3 +1,5 @@
+import i18next from 'i18next'
+
 import Button from './Button'
 
 export default {
@@ -20,5 +22,5 @@ const Template = (args) => <Button {...args} />
 export const Default = Template.bind({})
 Default.args = {
   primary: false,
-  children: 'Botão padrão'
+  children: i18next.t('atButton:foo')
 }

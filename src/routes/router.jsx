@@ -1,3 +1,4 @@
+import i18next from 'i18next'
 import React, { lazy, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, Outlet, useNavigate, useRoutes } from 'react-router-dom'
@@ -30,8 +31,10 @@ const Signin = ({ onClick }) => {
         height: '100%'
       }}
     >
-      <h3>PARA LOGAR CLIQUE AQUI</h3>
-      <button onClick={onClick}>SIGN IN</button>
+      <h3>{i18next.t('globalText:sign')}</h3>
+      <button onClick={onClick}>
+        {i18next.t('globalText:sign', { context: 'btn' })}
+      </button>
     </div>
   )
 }

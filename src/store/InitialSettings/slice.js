@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import i18next from 'i18next'
 
 import { api } from '@/services/api'
 
@@ -16,7 +17,7 @@ export const slice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addMatcher(api.endpoints.fetchRepos.matchFulfilled, (state) => {
-      state.changeResult = 'Exemplo personalizando response'
+      state.changeResult = i18next.t('rxStore:initialSettings.changeResult')
     })
   }
 })

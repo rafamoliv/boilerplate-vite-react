@@ -12,7 +12,7 @@ export const api = createApi({
     return {
       fetchRepos: builder.query({
         query() {
-          return 'users/rafamoliv/repos'
+          return 'users/Yoonit-Labs/repos'
         }
       })
     }

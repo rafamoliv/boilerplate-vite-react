@@ -49,8 +49,23 @@ module.exports = (plop) => {
       },
       {
         type: 'add',
-        path: 'src/components/{{typeComponent}}/{{properCase name}}/{{properCase name}}.test.js',
+        path: 'src/components/{{typeComponent}}/{{properCase name}}/{{properCase name}}.test.jsx',
         templateFile: '.plop/templates/component/test.jsx.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/components/{{typeComponent}}/{{properCase name}}/locales/index.js',
+        templateFile: '.plop/templates/locales/index.js.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/components/{{typeComponent}}/{{properCase name}}/locales/en.js',
+        templateFile: '.plop/templates/locales/en.js.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/components/{{typeComponent}}/{{properCase name}}/locales/ptBr.js',
+        templateFile: '.plop/templates/locales/ptBr.js.hbs'
       }
     ]
   })
@@ -101,6 +116,21 @@ module.exports = (plop) => {
         type: 'add',
         path: 'src/pages/{{properCase name}}/{{properCase name}}.test.jsx',
         templateFile: '.plop/templates/page/test.jsx.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{properCase name}}/locales/index.js',
+        templateFile: '.plop/templates/locales/index.js.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{properCase name}}/locales/en.js',
+        templateFile: '.plop/templates/locales/en.js.hbs'
+      },
+      {
+        type: 'add',
+        path: 'src/pages/{{properCase name}}/locales/ptBr.js',
+        templateFile: '.plop/templates/locales/ptBr.js.hbs'
       }
     ]
   })

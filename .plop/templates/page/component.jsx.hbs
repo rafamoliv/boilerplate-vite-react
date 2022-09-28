@@ -1,5 +1,6 @@
 // #region imports
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Button } from '@/components'
@@ -15,10 +16,13 @@ import { reactLogo } from '@/assets/icons'
  *  Page {{pascalCase name}}
  */
 
-const {{pascalCase name}} = ({ children }) => {
+const {{pascalCase name}} = () => {
   const dispatch = useDispatch()
+  const { t } = useTranslation('cat{{pascalCase name}}')
   const { isInitialized } = useSelector((state) => state.initialSetting)
   const [count, setCount] = useState(0)
+
+  console.log(t('foo'))
 
   return (
     <S.Container>
@@ -40,8 +44,7 @@ const {{pascalCase name}} = ({ children }) => {
 
       <S.Button onClick={() => dispatch(setSignout())}>SIGN OUT</S.Button>
     </S.Container>
-
+  )
 }
-
 
 export default {{pascalCase name}}

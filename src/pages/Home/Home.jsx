@@ -1,5 +1,5 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { Button } from '@/components'
@@ -13,12 +13,13 @@ import { useFetchReposQuery } from '@/services/api'
 
 const Home = () => {
   const dispatch = useDispatch()
+  const { t } = useTranslation('pgHome')
   const { isInitialized, changeResult } = useSelector(
     (state) => state.initialSetting
   )
   const { data = [] } = useFetchReposQuery()
   const [count, setCount] = useState(0)
-  console.log('changeResult', changeResult)
+
   return (
     <Container>
       <div>
@@ -30,13 +31,13 @@ const Home = () => {
         </a>
       </div>
 
-      <h1>Boilerplate Vite + React</h1>
-
-      <Docs>Click on the Vite and React logos to learn more</Docs>
+      <h1>{t('title')}</h1>
+      <Docs>{t('summary')}</Docs>
+      <p>{changeResult}</p>
 
       <Card>
         <Button onClick={() => setCount((count) => count + 1)} primary>
-          Hook count is {count}
+          {t('count', { value: count })}
         </Button>
       </Card>
 
@@ -48,14 +49,16 @@ const Home = () => {
           }}
           primary
         >
-          Launch redux
+          {t('btn', { context: 'redux' })}
         </Button>
-        <Button onClick={() => dispatch(setSignout())}>SIGN OUT</Button>
+        <Button onClick={() => dispatch(setSignout())}>
+          {t('btn', { context: 'signout' })}
+        </Button>
       </div>
 
       <div>
         <p>
-          <strong>Call redux: </strong>
+          <strong>{t('redux')}</strong>
         </p>
         {data?.map((x, i) => {
           return <p key={i}>{x.name}</p>
