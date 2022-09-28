@@ -30,3 +30,4 @@ storybook-static
 *.sln
 *.sw?
 *.env*
+!*.env-example*

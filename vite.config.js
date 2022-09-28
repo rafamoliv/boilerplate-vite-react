@@ -7,7 +7,8 @@ import { defineConfig, loadEnv } from 'vite'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  const configStyledComponents = env.REACT_ENVIRONMENT === 'DEVELOPMENT' && {
+  const isDev = env.REACT_ENVIRONMENT === 'DEVELOPMENT'
+  const configStyledComponents = isDev && {
     displayName: true,
     fileName: false,
     namespace: 'boiler-vite'

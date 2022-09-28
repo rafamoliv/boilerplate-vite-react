@@ -38,12 +38,22 @@ Vite recommended model.
 **Obs: These files are included in .gitignore**
 
 #### Environment variables development
-Create a `.env.development.local` file with the following content:
+Type the following command in your terminal to copy the example file and
+rename it to `.env.development.local`:
+```bash
+cp .env-example .env.development.local
+```
+Local variables:
 ```
 REACT_ENVIRONMENT = 'DEVELOPMENT'
 ```
 #### Environment variables production
-Create a `.env` file with the following content:
+Type the following command in your terminal to copy the example file and
+rename it to `.env`:
+```bash
+cp .env-example .env
+```
+Production values:
 ```
 REACT_ENVIRONMENT = 'PRODUCTION'
 ```

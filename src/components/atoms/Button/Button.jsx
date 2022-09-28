@@ -1,6 +1,6 @@
-/* eslint-disable import/order */
-import * as S from './Button.styles'
 import PropTypes from 'prop-types'
+
+import * as S from './Button.styles'
 
 const Button = ({ onClick, children, primary }) => {
   return (
