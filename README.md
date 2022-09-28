@@ -20,6 +20,8 @@ Boilerplate for projects using Vite with react.
 ### What is used
 
 - [ReactJS](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Styled Components](https://styled-components.com/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - [Vitest](https://vitest.dev/)
