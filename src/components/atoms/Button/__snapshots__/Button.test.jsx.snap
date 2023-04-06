@@ -1,0 +1,19 @@
+// Vitest Snapshot v1
+
+exports[`<Button /> > Component Render > render element 1`] = `
+.c0 {
+  background: #3cd3c1;
+  padding: 0.5rem 1rem;
+  margin: 1em;
+  border: 2px solid #2a9f91;
+  border-radius: 3px;
+  color: #000;
+}
+
+<button
+  class="c0"
+  data-testid="button"
+>
+  Welcome to React and react-i18next
+</button>
+`;

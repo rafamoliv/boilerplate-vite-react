@@ -1,0 +1,11 @@
+{
+  "compilerOptions" :  {
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@/*" :  ["src/*"]
+    }
+  },
+  "exclude": ["dist", "node_modules"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "types.d.ts"]
+}

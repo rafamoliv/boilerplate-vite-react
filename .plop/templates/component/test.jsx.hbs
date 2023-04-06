@@ -1,18 +1,22 @@
 // #region imports
+import i18next from 'i18next'
+import { expect, it, vi } from 'vitest'
+
 import { render, screen, userEvent } from '@/utils/tests'
 
-import { {{pascalCase name}} } from './'
+import { {{pascalCase name}} } from '.'
 // #endregion imports
 
 const props = {
-  children: 'Olá mundo'
+  children: i18next.t('translation:foo'),
+  onClick: vi.fn()
 }
 
 describe('<{{pascalCase name}} />', () => {
   describe('Component Render', () => {
     it('render element', () => {
       const { container } = render(<{{pascalCase name}} {...props} />)
-      const button = screen.getByRole('button', '/Botão/i')
+      const button = screen.getByRole('button', `/${props.children}/i`)
       expect(button).toBeInTheDocument()
       expect(container.firstChild).toMatchSnapshot()
     })
@@ -21,10 +25,20 @@ describe('<{{pascalCase name}} />', () => {
   describe('Events', () => {
     it('Click element', async () => {
       render(<{{pascalCase name}} {...props} />)
-      const button = screen.getByRole('button', '/Botão/i')
+      const button = screen.getByRole('button', `/${props.children}/i`)
       await userEvent.click(button)
 
       expect(props.onClick).toBeCalled()
+    })
+  })
+
+  describe('Props', () => {
+    it('Should have text', async () => {
+      render(<{{pascalCase name}} {...props} />)
+      expect(screen.getByRole('button', `/${props.children}/i`)).toBeDefined()
+      expect(
+        screen.getByRole('button', `/${props.children}/i`)
+      ).toHaveTextContent(props.children)
     })
   })
 })

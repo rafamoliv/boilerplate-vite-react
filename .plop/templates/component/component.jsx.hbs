@@ -1,5 +1,9 @@
 // #region imports
+import { faArrowLeftLong } from '@fortawesome/pro-thin-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import config from './{{pascalCase name}}.config'
 import * as S from './{{pascalCase name}}.styles'
@@ -10,13 +14,14 @@ import * as S from './{{pascalCase name}}.styles'
  */
 
 const {{pascalCase name}} = ({ children, onClick }) => {
+  const { t } = useTranslation('cat{{pascalCase name}}')
   const teste = config.foo
-  console.log(teste)
+  console.log(teste, t('foo'))
 
   return (
     <S.Wrap>
-      <S.Button onClick={onClick}>Botão</S.Button>
-      <S.Text>{children}</S.Text>
+      <S.Button onClick={onClick}>{children}</S.Button>
+      <S.Text><FontAwesomeIcon icon={faArrowLeftLong} /> {children}</S.Text>
     </S.Wrap>
   )
 }
